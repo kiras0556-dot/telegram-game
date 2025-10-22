@@ -23,7 +23,15 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 # ---------- Налаштування ----------
 # УВАГА: Замість використання справжнього токена, я залишив заглушку.
 # Для реальної роботи замініть на свій справжній токен.
-TOKEN = "8040232529:AAEy8HSL9zoumT2m-2OI-jKyti8D-BI6OXU"
+# Читаємо токен зі змінної середовища
+TOKEN = os.environ.get("BOT_TOKEN") 
+
+if not TOKEN:
+    logging.error("❌ Змінна середовища BOT_TOKEN не знайдена. Бот не може запуститися.")
+    # Примусове завершення, якщо токена немає
+    exit(1) 
+
+# УВАГА: DATA_FILE та CARDS_DIR також повинні бути доступні
 DATA_FILE = "users.json"
 CARDS_DIR = "cards"
 # -----------------------------------
@@ -921,4 +929,5 @@ if __name__ == "__main__":
         # Використовуємо asyncio.run() для сучасного асинхронного запуску
         asyncio.run(main())
     except KeyboardInterrupt:
+
         logging.info("Бот зупинено")
