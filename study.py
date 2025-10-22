@@ -3,6 +3,24 @@
 # pip install aiogram
 # Запуск: python luschin_casino_aiogram3_fixed_final.py
 
+# =======================================================
+# КОД ДЛЯ ПІДТРИМКИ АКТИВНОСТІ НА REPLIT (Keep Alive)
+# =======================================================
+from flask import Flask
+import threading
+import os 
+
+app = Flask('')
+@app.route('/')
+def home():
+    return "Telegram Bot is running!"
+
+def run_flask_server():
+    # os.environ.get("PORT", 8080) читає порт, який надає Replit
+    app.run(host='0.0.0.0', port=os.environ.get("PORT", 8080)) 
+
+# =======================================================
+
 import asyncio
 import json
 import os
@@ -913,6 +931,8 @@ async def cookie_surprise(callback: types.CallbackQuery):
 # БЛОК ЗАПУСКУ
 # ==================================
 
+threading.Thread(target=run_flask_server).start()
+
 async def main():
     """Основна функція запуску бота."""
     Path(CARDS_DIR).mkdir(parents=True, exist_ok=True)
@@ -931,3 +951,4 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
 
         logging.info("Бот зупинено")
+
