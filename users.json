@@ -1,0 +1,54 @@
+{
+  "users": {
+    "932427937": {
+      "last_slot_msg_id": 2119,
+      "poker_history_msg_ids": [
+        2128,
+        2129,
+        2130,
+        2131,
+        2132,
+        2133
+      ],
+      "last_cookie_msg_id": 2082,
+      "points": 30,
+      "wins": 4,
+      "collection": [
+        "bouling",
+        "gucul",
+        "ohyrechnik",
+        "letsacooke",
+        "grizmanylizky",
+        "viking",
+        "beatiful",
+        "sigmakucherhappy",
+        "morjak",
+        "pasporty"
+      ],
+      "prizes": [],
+      "awarded_tiers": [
+        5,
+        10,
+        15
+      ],
+      "subscriptions": {},
+      "last_card_photo_id": null
+    },
+    "8040232529": {
+      "last_slot_msg_id": null,
+      "poker_history_msg_ids": [],
+      "last_cookie_msg_id": null,
+      "points": 0,
+      "wins": 0,
+      "collection": [],
+      "prizes": [],
+      "awarded_tiers": [],
+      "subscriptions": {},
+      "last_card_photo_id": null
+    }
+  },
+  "levels": {
+    "932427937": 1,
+    "8040232529": 1
+  }
+}
